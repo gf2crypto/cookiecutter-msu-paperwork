@@ -2,6 +2,10 @@
 {% raw %}
 % Отключаем номер главы для эмуляции пакета article
 \counterwithout{section}{chapter}
+% Нумерация подразделов
+\setsecnumdepth{subsection}
+% Отображать подразделы в содержании
+\maxtocdepth{subsection}
 
 % Better page layout for A4 paper, see memoir manual.
 \settrimmedsize{297mm}{210mm}{*}
