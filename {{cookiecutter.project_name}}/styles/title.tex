@@ -1,0 +1,46 @@
+%!TEX root = ../{{cookiecutter.project_name}}.tex
+{% raw %}
+% -----------------------Title Header-------------------------------------
+\makepagestyle{titlepagestyle}
+\makeevenhead{titlepagestyle}{}{}{}  % place page number in the center of footer
+\makeoddhead{titlepagestyle}{}{}{}
+
+% -----------------------Title Footer-------------------------------------
+\makeevenfoot{titlepagestyle}{}{}{}
+\makeoddfoot{titlepagestyle}{}{\Place, \Year}{}
+\thispagestyle{titlepagestyle}
+% \aliaspagestyle{titlingpage}{titlepagestyle}
+% \definecolor{krypto_red}{RGB}{135, 43, 59}
+\begin{SingleSpace}
+\begin{center}
+\includegraphics{logo}\\
+{\small
+\MakeUppercase{\Univer}\\
+\MakeUppercase{\Faculty}\\
+\MakeUppercase{\Department}\\[4\baselineskip]
+}
+\Author\\
+\textbf{
+  \Title\\[2\baselineskip]
+}
+\MakeUppercase{\WorkType}\\[3\baselineskip]
+\end{center}
+
+\vspace*{2\baselineskip}
+
+\noindent
+\begin{minipage}{0.4\textwidth}
+\phantom{MMMM}
+\end{minipage}
+\begin{minipage}{0.58\textwidth}
+        \SingleSpacing
+        \textbf{Научный руководитель:}\\
+        \ifthenelse{\equal{\AcademicDegree}{}}{}{\AcademicDegree,\ }\Position\\
+        \SciAdvisor\\[\baselineskip]
+    \begin{flushright}
+          {\small\textit{C текстом работы ознакомлен}\\[2\baselineskip]\underline{\phantom{МММММММММММMM}} \SciAdvisorShort}
+    \end{flushright}
+\end{minipage}
+
+\end{SingleSpace}
+{% endraw %}

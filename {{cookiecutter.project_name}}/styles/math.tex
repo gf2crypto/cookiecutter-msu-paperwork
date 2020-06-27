@@ -1,0 +1,37 @@
+%!TEX root = ../{{cookiecutter.project_name}}.tex
+{% raw %}
+%Поддержка математики
+\usepackage{amsthm}
+\usepackage{amstext}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+%Красивые дроби
+\usepackage{xfrac}
+%Дополнительные математические окружения
+\usepackage{mathtools}
+%Математический шрифт
+\usepackage[bigdelims,vvarbb]{newtxmath}
+%Прямые греческие буквы (принято в русской типографии)
+\usepackage{upgreek}
+% %Тонкое оформление перекрёстных ссылок
+% \usepackage[russian]{cleveref}
+
+%Окружения для набора утверждений и определений
+\theoremstyle{plain}
+\newtheorem{theorem}{Теорема}
+\newtheorem{lemma}{Лемма}
+\newtheorem{corollary}{Следствие}
+\newtheorem{proposition}{Утверждение}
+\newtheorem{theorem*}{Теорема}
+\newtheorem{lemma*}{Лемма}
+\newtheorem{corollary*}{Следствие}
+\newtheorem{proposition*}{Утверждение}
+\theoremstyle{definition}
+\newtheorem{definition}{Определение}
+\newtheorem{remark}{Замечание}
+\newtheorem{example}{Пример}
+\newtheorem{definition*}{Определение}
+\newtheorem{remark*}{Замечание}
+\newtheorem{example*}{Пример}
+{% endraw %}

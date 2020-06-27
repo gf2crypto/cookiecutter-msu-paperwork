@@ -1,0 +1,19 @@
+%!TEX root = ../{{cookiecutter.project_name}}.tex
+{% raw %}
+% Крутой пакет для рисования
+\usepackage{tikz}
+% Подключаем пакет работы с графикой
+\usepackage{graphicx}
+
+% Пусть к папке с рисунками
+\graphicspath{{images/}}
+
+% Можно указывать имя файлов без расширений
+% LaTeX будет последовательно подставлять перечисленные
+% пока файл не будет найден
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+
+% \renewcommand{\figurename}{Рисунок} % (ГОСТ Р 7.0.11-2011, 5.3.9)
+% \renewcommand{\listfigurename}{Список рисунков}
+{% endraw %}
