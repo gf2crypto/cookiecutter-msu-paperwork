@@ -1,0 +1,46 @@
+%!TEX root = {{cookiecutter.project_name}}.tex
+%% Place your additional commands and definitions here
+%% For example:
+%% 			\DeclareMathOperator{\supp}{supp}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hyphenation{Си-дель-ни-кова}
+%------------------------------------------------------------------------------------------
+\newcommand{\Def}[1] {
+\begin{definition}
+#1
+\end{definition}
+}
+%------------------------------------------------------------------------------------------
+\DeclareMathOperator{\supp}{supp}
+\renewcommand*{\r}{\mathop{\mathrm{\rho}}}
+\newcommand*{\wt}{\mathop{\mathrm{wt}}}
+\newcommand*{\rank}{\mathop{\mathrm{rank}}}
+\newcommand*{\sm}{\setminus}
+\renewcommand*{\G}{\Gamma}
+\newcommand*{\g}{\gamma}
+\newcommand*{\cG}{\mathcal G}
+\newcommand*{\cN}{\mathcal N}
+\newcommand*{\eq}[1]
+{
+\begin{equation*}
+#1
+\end{equation*}
+}
+\newcommand*{\eqn}[1]
+{
+\begin{equation}
+#1
+\end{equation}
+}
+\newcommand*{\matr}[1]
+{
+\begin{matrix}
+#1
+\end{matrix}
+}
+\newcommand*{\pmatr}[1]
+{
+\begin{pmatrix}
+#1
+\end{pmatrix}
+}

@@ -1,0 +1,144 @@
+%!TEX root = ../{{cookiecutter.project_name}}.tex
+
+{% raw %}
+%Включение в документ листингов
+\usepackage{listings}
+
+%Окружение для алгоритма
+\usepackage[%
+    ruled,
+    vlined,
+    algosection,
+    linesnumbered,
+    titlenumbered
+]{algorithm2e}
+
+%Предоставляет команды для написания алгоритма
+%в псевдокоде
+\usepackage{algorithmic}
+
+% Подстветка синтаксиса
+% ВНИМАНИЕ! Требует установки python и пакета pygmentize
+% Поэтому по умолчанию пакет закомментирован, чтобы не возникало ошибок компиляции
+% \usepackage{minted}
+
+%решаем проблему с кириллицей в комментариях (в pdflatex) https://tex.stackexchange.com/a/103712
+\lstset{extendedchars=true,keepspaces=true,literate={Ö}{{\"O}}1
+    {Ä}{{\"A}}1
+    {Ü}{{\"U}}1
+    {ß}{{\ss}}1
+    {ü}{{\"u}}1
+    {ä}{{\"a}}1
+    {ö}{{\"o}}1
+    {~}{{\textasciitilde}}1
+    {а}{{\selectfont\char224}}1
+    {б}{{\selectfont\char225}}1
+    {в}{{\selectfont\char226}}1
+    {г}{{\selectfont\char227}}1
+    {д}{{\selectfont\char228}}1
+    {е}{{\selectfont\char229}}1
+    {ё}{{\"e}}1
+    {ж}{{\selectfont\char230}}1
+    {з}{{\selectfont\char231}}1
+    {и}{{\selectfont\char232}}1
+    {й}{{\selectfont\char233}}1
+    {к}{{\selectfont\char234}}1
+    {л}{{\selectfont\char235}}1
+    {м}{{\selectfont\char236}}1
+    {н}{{\selectfont\char237}}1
+    {о}{{\selectfont\char238}}1
+    {п}{{\selectfont\char239}}1
+    {р}{{\selectfont\char240}}1
+    {с}{{\selectfont\char241}}1
+    {т}{{\selectfont\char242}}1
+    {у}{{\selectfont\char243}}1
+    {ф}{{\selectfont\char244}}1
+    {х}{{\selectfont\char245}}1
+    {ц}{{\selectfont\char246}}1
+    {ч}{{\selectfont\char247}}1
+    {ш}{{\selectfont\char248}}1
+    {щ}{{\selectfont\char249}}1
+    {ъ}{{\selectfont\char250}}1
+    {ы}{{\selectfont\char251}}1
+    {ь}{{\selectfont\char252}}1
+    {э}{{\selectfont\char253}}1
+    {ю}{{\selectfont\char254}}1
+    {я}{{\selectfont\char255}}1
+    {А}{{\selectfont\char192}}1
+    {Б}{{\selectfont\char193}}1
+    {В}{{\selectfont\char194}}1
+    {Г}{{\selectfont\char195}}1
+    {Д}{{\selectfont\char196}}1
+    {Е}{{\selectfont\char197}}1
+    {Ё}{{\"E}}1
+    {Ж}{{\selectfont\char198}}1
+    {З}{{\selectfont\char199}}1
+    {И}{{\selectfont\char200}}1
+    {Й}{{\selectfont\char201}}1
+    {К}{{\selectfont\char202}}1
+    {Л}{{\selectfont\char203}}1
+    {М}{{\selectfont\char204}}1
+    {Н}{{\selectfont\char205}}1
+    {О}{{\selectfont\char206}}1
+    {П}{{\selectfont\char207}}1
+    {Р}{{\selectfont\char208}}1
+    {С}{{\selectfont\char209}}1
+    {Т}{{\selectfont\char210}}1
+    {У}{{\selectfont\char211}}1
+    {Ф}{{\selectfont\char212}}1
+    {Х}{{\selectfont\char213}}1
+    {Ц}{{\selectfont\char214}}1
+    {Ч}{{\selectfont\char215}}1
+    {Ш}{{\selectfont\char216}}1
+    {Щ}{{\selectfont\char217}}1
+    {Ъ}{{\selectfont\char218}}1
+    {Ы}{{\selectfont\char219}}1
+    {Ь}{{\selectfont\char220}}1
+    {Э}{{\selectfont\char221}}1
+    {Ю}{{\selectfont\char222}}1
+    {Я}{{\selectfont\char223}}1
+    {і}{{\selectfont\char105}}1
+    {ї}{{\selectfont\char168}}1
+    {є}{{\selectfont\char185}}1
+    {ґ}{{\selectfont\char160}}1
+    {І}{{\selectfont\char73}}1
+    {Ї}{{\selectfont\char136}}1
+    {Є}{{\selectfont\char153}}1
+    {Ґ}{{\selectfont\char128}}1
+}
+% Ширина текста минус ширина надписи 999
+\newlength{\twless}
+\newlength{\lmarg}
+\setlength{\lmarg}{\widthof{999}}   % ширина надписи 999
+\setlength{\twless}{\textwidth-\lmarg}
+\lstset{ %
+%    language=R,                     %  Язык указать здесь, если во всех листингах преимущественно один язык, в результате часть настроек может пойти только для этого языка
+    numbers=left,                   % where to put the line-numbers
+    numberstyle=\fontsize{12pt}{14pt}\selectfont\color{Gray},  % the style that is used for the line-numbers
+    firstnumber=1,                  % в этой и следующей строках задаётся поведение нумерации 5, 10, 15...
+    stepnumber=5,                   % the step between two line-numbers. If it's 1, each line will be numbered
+    numbersep=5pt,                  % how far the line-numbers are from the code
+    backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+    showspaces=false,               % show spaces adding particular underscores
+    showstringspaces=false,         % underline spaces within strings
+    showtabs=false,                 % show tabs within strings adding particular underscores
+    frame=leftline,                 % adds a frame of different types around the code
+    rulecolor=\color{black},        % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. commens (green here))
+    tabsize=2,                      % sets default tabsize to 2 spaces
+    captionpos=t,                   % sets the caption-position to top
+    breaklines=true,                % sets automatic line breaking
+    breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+%    title=\lstname,                 % show the filename of files included with \lstinputlisting;
+    % also try caption instead of title
+    basicstyle=\fontsize{12pt}{14pt}\selectfont\ttfamily,% the size of the fonts that are used for the code
+%    keywordstyle=\color{blue},      % keyword style
+    commentstyle=\color{ForestGreen}\emph,% comment style
+    stringstyle=\color{Mahogany},   % string literal style
+    escapeinside={\%*}{*)},         % if you want to add a comment within your code
+    morekeywords={*,...},           % if you want to add more keywords to the set
+    inputencoding=utf8,             % кодировка кода
+    xleftmargin={\lmarg},           % Чтобы весь код и полоска с номерами строк была смещена влево, так чтобы цифры не вылезали за пределы текста слева
+}
+
+\renewcommand{\lstlistingname}{Листинг}
+{% endraw %}

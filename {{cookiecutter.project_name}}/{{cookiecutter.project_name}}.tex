@@ -1,0 +1,82 @@
+{%- raw -%}
+%!TEX options=-shell-escape
+%!TEX program=pdflatex
+
+% Устанавливаем шрифт для всего документа
+% Это нужно делать обязательно до загрузки memoir!
+% \newcommand*{\memfontpack}{XCharter}
+\newcommand*{\memfontpack}{tempora}
+\input{config.tex}
+\documentclass[
+    a4paper,
+    article,
+    oneside,
+    onecolumn,
+    14pt,
+    extrafontsizes,
+    openright,
+    \Status
+]{memoir}
+
+%Полезный условный оператор
+\usepackage{ifthen}
+
+%%%%%%% ВНИМАНИЕ! ИЗМЕНЕНИЕ ПОРЯДКА ПОДКЛЮЧЕНИЯ СТИЛЕЙ МОЖЕТ НАРУШИТЬ РАБОТУ ШАБЛОНА %%%%%%%
+%Настройка шрифтов
+\input{styles/fonts}
+%Обеспечиваем работу с математикой
+\input{styles/math}
+%Настраиваем дизайн текста (отступы, интервалы и пр.)
+\input{styles/text}
+%Настройка дизайна страницы
+\input{styles/page}
+%Обеспечиваем работу с медиа-контентом (с рисунками)
+\input{styles/media}
+%Обеспечиваем работу с таблицами
+\input{styles/table}
+%Обеспечиваем оформление алгоритмов и листингов
+\input{styles/algorithms}
+
+% Оформление библиографии по ГОСТ
+\usepackage[% 
+  backend=biber, %подключение пакета biber
+  bibstyle=gost-numeric, %подключение одного из четырех главных стилей biblatex-gost 
+  citestyle=numeric-comp, %подключение стиля 
+  language=auto, %указание сортировки языков
+  sorting=none, %тип сортировки в библиографии
+  doi=true, 
+  eprint=false, 
+  isbn=false, 
+  dashed=true, 
+  url=true
+]{biblatex}
+\bibliography{bibliography}
+
+% Команды шаблона
+\input{styles/commands}
+
+% Пользовательские команды
+\input{commands}
+
+
+\begin{document}
+    %Титульная страница
+    \input{styles/title}
+
+    %Вставляем оглавление
+    \clearpage
+    \tableofcontents*
+    \clearpage
+
+    %Вставляем основное содержание
+    \input{%
+      mainfiles/
+{%- endraw -%}
+      {{cookiecutter.project_name}}.source.tex%
+    }
+
+    %Печатаем библиографию
+    \clearpage
+    \printbibliography
+\end{document}
+

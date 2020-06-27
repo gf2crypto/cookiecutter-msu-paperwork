@@ -1,0 +1,3 @@
+{
+    "create_gitignore": "{{cookiecutter.create_gitignore}}"
+}

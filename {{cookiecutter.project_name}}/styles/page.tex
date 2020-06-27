@@ -1,0 +1,47 @@
+%!TEX root = ../{{cookiecutter.project_name}}.tex
+{% raw %}
+% Отключаем номер главы для эмуляции пакета article
+\counterwithout{section}{chapter}
+
+% Better page layout for A4 paper, see memoir manual.
+\settrimmedsize{297mm}{210mm}{*}
+\setlength{\trimtop}{0pt} 
+\setlength{\trimedge}{\stockwidth} 
+\addtolength{\trimedge}{-\paperwidth} 
+\settypeblocksize{620pt}{448.13pt}{*} 
+\setulmarginsandblock{2cm}{2cm}{*} 
+\setlrmarginsandblock{3cm}{1.5cm}{*} 
+\setmarginnotes{17pt}{51pt}{\onelineskip} 
+\setheadfoot{2\onelineskip}{1.5\onelineskip} 
+\setheaderspaces{*}{\onelineskip}{*} 
+\checkandfixthelayout
+
+%Межстрочный интервал
+\OnehalfSpacing
+
+%Длина абзацного отступа по ГОСТ
+\setlength{\parindent}{2.5em}
+
+%Стандартный стиль оформления
+\makepagestyle{standart}
+%Настройка верхнего колонтитула
+\makeevenhead{standart}{}{\thepage}{}  % номер по центру колонтитула
+\makeoddhead{standart}{}{\thepage}{}
+
+%Настройка нижнего колонтитула
+\makeevenfoot{standart}{}{}{}
+\makeoddfoot{standart}{}{}{}
+
+%Ассоциируем новый стиль со встроенным стилем plain
+\aliaspagestyle{plain}{standart}
+
+%Устанавливаем основной стиль оформления страницы
+\pagestyle{standart}
+
+%Изменение ориентации страницы внутри документа
+\usepackage{changepage}
+%Для включения альбомных страниц
+\usepackage{pdflscape}
+%Добавление внешних pdf файлов
+\usepackage{pdfpages}
+{% endraw %}
