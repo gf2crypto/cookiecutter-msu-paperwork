@@ -19,19 +19,22 @@
 
 %Окружения для набора утверждений и определений
 \theoremstyle{plain}
-\newtheorem{theorem}{Теорема}
-\newtheorem{lemma}{Лемма}
-\newtheorem{corollary}{Следствие}
-\newtheorem{proposition}{Утверждение}
+\newtheorem{theorem}{Теорема}[section]
+\newtheorem{lemma}{Лемма}[section]
+\newtheorem{corollary}{Следствие}[section]
+\newtheorem{proposition}{Утверждение}[section]
 \newtheorem{theorem*}{Теорема}
 \newtheorem{lemma*}{Лемма}
 \newtheorem{corollary*}{Следствие}
 \newtheorem{proposition*}{Утверждение}
 \theoremstyle{definition}
-\newtheorem{definition}{Определение}
-\newtheorem{remark}{Замечание}
-\newtheorem{example}{Пример}
+\newtheorem{definition}{Определение}[section]
+\newtheorem{remark}{Замечание}[section]
+\newtheorem{example}{Пример}[section]
 \newtheorem{definition*}{Определение}
 \newtheorem{remark*}{Замечание}
 \newtheorem{example*}{Пример}
+
+% Нумерация формул по разделам
+\numberwithin{equation}{section}
 {% endraw %}
