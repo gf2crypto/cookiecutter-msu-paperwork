@@ -1,6 +1,27 @@
 %!TEX root = {{cookiecutter.project_name}}.tex
 
 {%- raw -%}
+% Добавьте ссылку на файлы с текстом работы
+% Можно использовать команды:
+%   \input или \include
+% Пример:
+%    \input{mainfiles/1-section} или \include{mainfiles/2-section}
+% Команда \input позволяет включить текст файла без дополнительной обработки
+% Команда \include при включении файла добавляет до него и после него команду
+% перехода на новую страницу. Кроме того, она позволяет компилировать каждый файл
+% в отдельности, что ускоряет сборку проекта.
+% ВАЖНО: команда \include не поддерживает включение файлов, в которых уже содержится команда \include,
+% т.е. не возможен рекурсивный вызов \include
+\newcommand*{\Source}{
+    \include{mainfiles/1-intro}
+    \include{mainfiles/2-mceliece}
+    \include{mainfiles/3-mcelice-key-space}
+    \include{mainfiles/4-mceliece-sidelnikov}
+    \include{mainfiles/5-mceliece-sidelnikov-key-space}
+    \include{mainfiles/6-mcelice-sidelnikov-key-space-case-u-2}
+}
+
+
 % Информация о годе выполнения работы
 \newcommand{\Year}{%
     % 2006%

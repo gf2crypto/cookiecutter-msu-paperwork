@@ -69,14 +69,10 @@
     \clearpage
 
     %Вставляем основное содержание
-    \input{%
-      mainfiles/
-{%- endraw -%}
-      {{cookiecutter.project_name}}.source.tex%
-    }
+    \Source
 
     %Печатаем библиографию
     \clearpage
     \printbibliography
 \end{document}
-
+{%- endraw -%}
