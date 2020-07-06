@@ -50,7 +50,11 @@
   dashed=true, 
   url=true
 ]{biblatex}
-\bibliography{bibliography}
+\addbibresource{
+{%- endraw -%}
+  {{cookiecutter.project_name}}.bib
+{%- raw -%}
+}
 
 % Команды шаблона
 \input{styles/commands}
