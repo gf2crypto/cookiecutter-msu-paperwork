@@ -1,4 +1,4 @@
-TEX_SOURCE := {{cookiecutter.project_name}}
+TEX_SOURCE := graduate-work
 
 BUILDPARAM = -cd -f -pdf -interaction=nonstopmode -synctex=1 -latexoption=-shell-escape
 WATCHPARAM = -pvc -f -pdf -interaction=nonstopmode -synctex=1 -latexoption=-shell-escape

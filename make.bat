@@ -1,6 +1,6 @@
 @ECHO OFF
 
-set TEX_SOURCE="{{cookiecutter.project_name}}"
+set TEX_SOURCE="graduate-work"
 
 set BUILDPARAM=-cd -f -pdf -interaction=nonstopmode -synctex=1 -latexoption=-shell-escape
 set WATCHPARAM=-pvc -f -pdf -interaction=nonstopmode -synctex=1 -latexoption=-shell-escape
