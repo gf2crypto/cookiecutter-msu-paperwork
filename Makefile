@@ -15,6 +15,9 @@ watch:
 .PHONY: clean
 clean:
 	rm -rf $(TEMP_FILES)
+	rm -rf mainfiles/$(TEMP_FILES)
+	rm -rf source/$(TEMP_FILES)
+	rm -rf sources/$(TEMP_FILES)
 
 .PHONY: purge
 purge: clean
