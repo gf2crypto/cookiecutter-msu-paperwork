@@ -43,6 +43,9 @@ goto exit
 
 :clean
 for %%F in %TEMP_FILES% do del /F %%F
+for %%F in mainfiles\%TEMP_FILES% do del /F %%F
+for %%F in source\%TEMP_FILES% do del /F %%F
+for %%F in sources\%TEMP_FILES% do del /F %%F
 
 goto exit
 
